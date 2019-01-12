@@ -85,7 +85,6 @@ foreach ($project in $projects) {
     } else {
         ProgressMessage "[$project]: signing assemblies"
         Exec { signtool sign /f $certFile /p $password $dlls }
-        Exec { signtool verify /pa $dlls }
     }
 
     ProgressMessage "[$project]: creating package"
